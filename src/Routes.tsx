@@ -10,7 +10,7 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/completeOrder" element={<CompleteOrderPage />} />
+        <Route path="/cart" element={<CompleteOrderPage />} />
         <Route path="/orderConfirmed" element={<OrderConfirmedPage />} />
       </Route>
     </Routes>

@@ -1,20 +1,20 @@
 import { TitleText } from '../../../../components/Typography'
-import { coffees } from '../../../../data/coffees'
-import { CoffeeCard } from '../CoffeeCard'
-import { CoffeeList, OurCoffeesContainer } from './styles'
+import { products } from '../../../../data/products'
+import { ProductCard } from '../ProductCard'
+import { ProductList, OurProductsContainer } from './styles'
 
-export function OurCoffees() {
+export function OurProducts() {
   return (
-    <OurCoffeesContainer className="container">
+    <OurProductsContainer className="container">
       <TitleText size="l" color="subtitle">
-        Nossos cafés
+        Categorias
       </TitleText>
 
-      <CoffeeList>
-        {coffees.map((coffee) => (
-          <CoffeeCard key={coffee.id} coffee={coffee} />
+      <ProductList>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
-      </CoffeeList>
-    </OurCoffeesContainer>
+      </ProductList>
+    </OurProductsContainer>
   )
 }

@@ -4,9 +4,8 @@ import { RegularText, TitleText } from '../../../../components/Typography'
 export const CoffeeCardContainer = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.colors['base-card']};
-  border-radius: 6px 36px 6px 36px;
+  border-radius: 14px;
   padding: 1.25rem;
-  padding-top: 0;
   text-align: center;
 
   display: flex;
@@ -17,7 +16,6 @@ export const CoffeeCardContainer = styled.div`
   img {
     width: 7.5rem;
     height: 7.5rem;
-    margin-top: -1.25rem;
   }
 `
 

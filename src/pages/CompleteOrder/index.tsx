@@ -3,9 +3,10 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CompleteOrderForm } from './components/CompleteOrderForm'
 import { SelectedCoffees } from './components/SelectedCoffees'
-import { CompleteOrderContainer } from './styles'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart'
+import { MapPin } from 'phosphor-react'
+import { CompleteOrderContainer } from './styles'
 
 enum PaymentMethods {
   credit = 'credit',

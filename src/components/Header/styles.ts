@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 5;
+  padding: 15px;
   width: 100%;
-  height: 6.5rem;
-  background: ${({ theme }) => theme.colors['base-background']};
-
+  background: ${({ theme }) => theme.colors['base-card']};
+  border-bottom: 2px #333 solid ;
   display: flex;
   align-items: center;
   justify-content: center;

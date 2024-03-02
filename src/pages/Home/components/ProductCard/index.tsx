@@ -12,22 +12,15 @@ import {
   Name,
   Tags,
 } from './styles'
+import { Product } from '../../../../contexts/CartContext'
 
-export interface Coffee {
-  id: number
-  tags: string[]
-  name: string
-  description: string
-  photo: string
-  price: number
+
+interface Props {
+  product: Product
 }
 
-interface CoffeeProps {
-  coffee: Coffee
-}
-
-export function CoffeeCard({ coffee }: CoffeeProps) {
-  const { addCoffeeToCart } = useCart()
+export function ProductCard({ product }: Props) {
+  const { addProductToCart } = useCart()
 
   const [quantity, setQuantity] = useState(1)
 
@@ -40,27 +33,22 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   }
 
   function handleAddToCart() {
-    const coffeeToAdd = {
-      ...coffee,
+    const productToAdd = {
+      ...product,
       quantity,
     }
 
-    addCoffeeToCart(coffeeToAdd)
+    addProductToCart(productToAdd)
   }
 
-  const formattedPrice = formatMoney(coffee.price)
+  const formattedPrice = formatMoney(product.price)
 
   return (
     <CoffeeCardContainer>
-      <img src={`/coffees/${coffee.photo}`} alt="" />
-      <Tags>
-        {coffee.tags.map((tag) => (
-          <span key={`${coffee.id}${tag}`}>{tag}</span>
-        ))}
-      </Tags>
+      <img src={`${product.image}`} alt="" />
 
-      <Name>{coffee.name}</Name>
-      <Description>{coffee.description}</Description>
+      <Name>{product.name}</Name>
+      <Description>{product.description}</Description>
 
       <CardFooter>
         <div>
@@ -72,9 +60,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
         <AddCartWrapper>
           <QuantityInput
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-            quantity={quantity}
+            quantity={1}
           />
           <button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />

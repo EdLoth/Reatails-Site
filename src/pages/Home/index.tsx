@@ -1,13 +1,14 @@
-import { Intro } from './components/Intro'
-import { OurCoffees } from './components/OurCoffees'
-
-import { HomeContainer } from './styles'
+import CartFloatingButton from '../../components/ButtonFloating'
+import { CategoryRow } from './components/CategoryRow'
+import { OurProducts } from './components/OurCoffees'
+import {HomeContainer } from './styles'
 
 export function HomePage() {
   return (
     <HomeContainer>
-      <Intro />
-      <OurCoffees />
+      <CategoryRow />
+      <OurProducts />
+      <CartFloatingButton />
     </HomeContainer>
   )
 }

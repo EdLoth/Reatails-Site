@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart'
 import coffeeLogoImg from '../../assets/coffee-delivery-logo.svg'
 import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from './styles'
+import DropdownMenuDemo from './PreviewCart'
 
 export function Header() {
   const { cartQuantity } = useCart()
@@ -10,7 +11,7 @@ export function Header() {
     <HeaderContainer>
       <div className="container">
         <NavLink to="/">
-          <img src={coffeeLogoImg} alt="" />
+          <h1>Vogar</h1>
         </NavLink>
 
         <HeaderButtonsContainer>
@@ -18,12 +19,7 @@ export function Header() {
             <MapPin size={20} weight="fill" />
             Porto Alegre, RS
           </HeaderButton>
-          <NavLink to="/completeOrder">
-            <HeaderButton variant="yellow">
-              {cartQuantity >= 1 && <span>{cartQuantity}</span>}
-              <ShoppingCart size={20} weight="fill" />
-            </HeaderButton>
-          </NavLink>
+          <DropdownMenuDemo/>
         </HeaderButtonsContainer>
       </div>
     </HeaderContainer>
